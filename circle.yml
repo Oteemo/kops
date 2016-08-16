@@ -1,5 +1,9 @@
+test:
+  override:
+    - go get -d
+    - make
 deployment:
   prod:
     branch: master
     commands:
-      - aws s3 sync $GOPATH/bin/kops s3://oteemo-kops --delete
+      - aws s3 sync $GOPATH/bin/kops s3 ://oteemo-kops --delete
